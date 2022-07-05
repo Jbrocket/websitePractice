@@ -9,8 +9,11 @@ window.addEventListener('scroll', function(e) {
         }
         else if (target[index].dataset.translate === 'horozontal'){
             let pos = (window.pageYOffset - 290) * target[index].dataset.rate;
-            let y = window.pageYOffset
+            let y = window.pageYOffset;
             target[index].style.transform = `translate3d(${pos}px, ${y}px, 0px)`;
+        }
+        else if(this.window.pageYOffset > 800){
+            target[index].style.transform = `translate3d(0px, 290px, 0px)`
         }
         else{
             let pos = (window.pageYOffset - 290) * target[index].dataset.rate + 290;
